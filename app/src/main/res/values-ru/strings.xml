@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Mentis Проекты</string>
+
+    <string name="login_title">Вход в Odoo</string>
+    <string name="login_server">Сервер</string>
+    <string name="login_database">База данных</string>
+    <string name="login_database_hint">Оставьте пустым для автоопределения</string>
+    <string name="login_login">Логин</string>
+    <string name="login_password">Пароль</string>
+    <string name="login_submit">Войти</string>
+    <string name="login_show_password">Показать пароль</string>
+    <string name="login_hide_password">Скрыть пароль</string>
+    <string name="totp_title">Двухфакторная аутентификация</string>
+    <string name="totp_hint">Введите код из приложения-аутентификатора.</string>
+    <string name="totp_code">Код подтверждения</string>
+    <string name="totp_remember">Больше не спрашивать на этом устройстве</string>
+    <string name="totp_submit">Подтвердить</string>
+    <string name="totp_back">Назад</string>
+
+    <string name="projects_title">Проекты</string>
+    <string name="projects_search">Поиск проектов</string>
+    <string name="projects_empty">Вам не доступен ни один проект.</string>
+    <string name="projects_not_found">Ничего не найдено.</string>
+    <string name="project_favorite">Избранное</string>
+    <plurals name="project_task_count">
+        <item quantity="one">%1$d задача</item>
+        <item quantity="few">%1$d задачи</item>
+        <item quantity="many">%1$d задач</item>
+        <item quantity="other">%1$d задачи</item>
+    </plurals>
+    <string name="logout">Выйти</string>
+    <string name="retry">Повторить</string>
+
+    <string name="error_network">Нет связи с сервером. Проверьте адрес и подключение к сети.</string>
+    <string name="error_credentials">Неверный логин или пароль.</string>
+    <string name="error_database_required">Сервер не показывает список баз. Укажите имя базы данных.</string>
+    <string name="error_totp">Неверный код подтверждения.</string>
+    <string name="error_access">У вас нет доступа к этим данным.</string>
+    <string name="error_http">Сервер ответил ошибкой %1$d.</string>
+    <string name="error_bad_url">Неверный адрес сервера.</string>
+    <string name="error_unknown">Что-то пошло не так: %1$s</string>
+</resources>

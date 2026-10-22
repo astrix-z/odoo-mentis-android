@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Mentis Проєкти</string>
+
+    <string name="login_title">Вхід до Odoo</string>
+    <string name="login_server">Сервер</string>
+    <string name="login_database">База даних</string>
+    <string name="login_database_hint">Залиште порожнім для автовизначення</string>
+    <string name="login_login">Логін</string>
+    <string name="login_password">Пароль</string>
+    <string name="login_submit">Увійти</string>
+    <string name="login_show_password">Показати пароль</string>
+    <string name="login_hide_password">Приховати пароль</string>
+    <string name="totp_title">Двофакторна автентифікація</string>
+    <string name="totp_hint">Введіть код із застосунку-автентифікатора.</string>
+    <string name="totp_code">Код підтвердження</string>
+    <string name="totp_remember">Більше не питати на цьому пристрої</string>
+    <string name="totp_submit">Підтвердити</string>
+    <string name="totp_back">Назад</string>
+
+    <string name="projects_title">Проєкти</string>
+    <string name="projects_search">Пошук проєктів</string>
+    <string name="projects_empty">Вам не доступний жоден проєкт.</string>
+    <string name="projects_not_found">Нічого не знайдено.</string>
+    <string name="project_favorite">Обране</string>
+    <plurals name="project_task_count">
+        <item quantity="one">%1$d завдання</item>
+        <item quantity="few">%1$d завдання</item>
+        <item quantity="many">%1$d завдань</item>
+        <item quantity="other">%1$d завдання</item>
+    </plurals>
+    <string name="logout">Вийти</string>
+    <string name="retry">Повторити</string>
+
+    <string name="error_network">Немає зв\'язку із сервером. Перевірте адресу та підключення до мережі.</string>
+    <string name="error_credentials">Неправильний логін або пароль.</string>
+    <string name="error_database_required">Сервер не показує список баз. Вкажіть назву бази даних.</string>
+    <string name="error_totp">Неправильний код підтвердження.</string>
+    <string name="error_access">У вас немає доступу до цих даних.</string>
+    <string name="error_http">Сервер відповів помилкою %1$d.</string>
+    <string name="error_bad_url">Неправильна адреса сервера.</string>
+    <string name="error_unknown">Щось пішло не так: %1$s</string>
+</resources>

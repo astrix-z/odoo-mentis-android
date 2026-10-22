@@ -1,0 +1,19 @@
+# Gradle / Android Studio
+.gradle/
+build/
+/local.properties
+/.idea/
+*.iml
+.kotlin/
+captures/
+.externalNativeBuild/
+.cxx/
+
+# Signing material and per-developer settings
+*.jks
+*.keystore
+keystore.properties
+.claude/settings.local.json
+
+# OS
+.DS_Store

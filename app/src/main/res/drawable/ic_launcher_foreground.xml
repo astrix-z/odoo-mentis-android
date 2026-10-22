@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Placeholder icon: a white check-list on the 108dp adaptive-icon canvas. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M38,40h6v6h-6zM50,41h20v4h-20zM38,51h6v6h-6zM50,52h20v4h-20zM38,62h6v6h-6zM50,63h20v4h-20z" />
+</vector>

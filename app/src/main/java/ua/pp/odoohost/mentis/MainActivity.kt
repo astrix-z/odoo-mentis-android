@@ -6,6 +6,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.key
@@ -19,8 +20,8 @@ import kotlinx.coroutines.flow.map
 import ua.pp.odoohost.mentis.data.auth.UserSession
 import ua.pp.odoohost.mentis.ui.login.LoginScreen
 import ua.pp.odoohost.mentis.ui.login.LoginViewModel
-import ua.pp.odoohost.mentis.ui.projects.ProjectsScreen
-import ua.pp.odoohost.mentis.ui.projects.ProjectsViewModel
+import ua.pp.odoohost.mentis.ui.common.LocalServerUrl
+import ua.pp.odoohost.mentis.ui.navigation.AppNavHost
 import ua.pp.odoohost.mentis.ui.theme.MentisTheme
 
 class MainActivity : AppCompatActivity() {
@@ -59,15 +60,11 @@ private fun App(container: AppContainer) {
         session == null -> LoginScreen(
             viewModel(factory = viewModelFactory { initializer { LoginViewModel(container.auth, container.sessionStore) } }),
         )
-        // Keyed by user, so signing in as someone else does not reuse the previous user's list.
+        // Keyed by user, so signing in as someone else starts from a clean back stack.
         else -> key(session.serverUrl, session.database, session.uid) {
-            ProjectsScreen(
-                viewModel(
-                    key = "projects-${session.serverUrl}-${session.database}-${session.uid}",
-                    factory = viewModelFactory { initializer { ProjectsViewModel(container.projects, container.auth) } },
-                ),
-                userName = session.name,
-            )
+            CompositionLocalProvider(LocalServerUrl provides session.serverUrl) {
+                AppNavHost(container, session)
+            }
         }
     }
 }

@@ -5,6 +5,7 @@ import androidx.compose.ui.res.stringResource
 import ua.pp.odoohost.mentis.R
 import ua.pp.odoohost.mentis.data.auth.DatabaseRequiredException
 import ua.pp.odoohost.mentis.data.auth.InvalidTotpException
+import ua.pp.odoohost.mentis.data.files.FileTooLargeException
 import ua.pp.odoohost.mentis.data.odoo.OdooException
 
 /** A user-facing message for an error from the data layer. */
@@ -16,6 +17,7 @@ fun errorText(error: Throwable): String = when (error) {
     is OdooException.Http -> stringResource(R.string.error_http, error.code)
     is DatabaseRequiredException -> stringResource(R.string.error_database_required)
     is InvalidTotpException -> stringResource(R.string.error_totp)
+    is FileTooLargeException -> stringResource(R.string.error_file_too_large, error.limitMb)
     is IllegalArgumentException -> stringResource(R.string.error_bad_url)
     // Odoo's own messages (UserError, ValidationError) are already translated for the user.
     is OdooException.Server -> error.message.orEmpty()

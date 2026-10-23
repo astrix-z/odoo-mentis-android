@@ -50,7 +50,7 @@ import ua.pp.odoohost.mentis.ui.theme.odooColor
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun ProjectsScreen(viewModel: ProjectsViewModel, userName: String) {
+fun ProjectsScreen(viewModel: ProjectsViewModel, userName: String, onOpenProject: (Project) -> Unit) {
     val state by viewModel.state.collectAsStateWithLifecycle()
     Scaffold(
         topBar = {
@@ -100,7 +100,7 @@ fun ProjectsScreen(viewModel: ProjectsViewModel, userName: String) {
                         verticalArrangement = Arrangement.spacedBy(12.dp),
                         modifier = Modifier.fillMaxSize(),
                     ) {
-                        items(state.visible, key = { it.id }) { ProjectCard(it) }
+                        items(state.visible, key = { it.id }) { project -> ProjectCard(project, onClick = { onOpenProject(project) }) }
                     }
                 }
             }
@@ -109,8 +109,8 @@ fun ProjectsScreen(viewModel: ProjectsViewModel, userName: String) {
 }
 
 @Composable
-private fun ProjectCard(project: Project) {
-    Card(Modifier.fillMaxWidth()) {
+private fun ProjectCard(project: Project, onClick: () -> Unit) {
+    Card(onClick = onClick, modifier = Modifier.fillMaxWidth()) {
         Row(Modifier.height(IntrinsicSize.Min)) {
             Box(
                 Modifier.width(6.dp).fillMaxHeight()
